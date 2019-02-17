@@ -2,14 +2,15 @@ Ported from https://github.com/sindresorhus/camelcase
 
 # camelcase
 
-[![Build Status](https://travis-ci.org/denolib/camelcase.svg?branch=master)](https://travis-ci.org/denolib/camelcase)
+![DenoLib](https://denolib.com/badge?scope=denolib&repo=camelcase)
+[![Build Status](https://img.shields.io/travis/denolib/camelcase.svg?style=flat-square)](https://travis-ci.org/denolib/camelcase)
 
 > Convert a dash/dot/underscore/space separated string to camelCase or PascalCase: `foo-bar` → `fooBar`
 
 ## Usage
 
 ```ts
-import { camelCase } from "https://raw.githubusercontent.com/denolib/camelcase/master/index.ts";
+import { camelCase } from "https://denolib.com/denolib/camelcase/mod.ts";
 
 camelCase("foo-bar");
 //=> "fooBar"

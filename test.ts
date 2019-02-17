@@ -1,8 +1,7 @@
-import { assertEqual } from "https://deno.land/x/testing/testing.ts";
-import { t } from "https://raw.githubusercontent.com/zhmushan/deno_test/master/index.ts";
-import { camelCase } from "index.ts";
+import { assertEqual, test, runTests } from "https://deno.land/x/testing/mod.ts";
+import { camelCase } from "mod.ts";
 
-t("camelCase", () => {
+test({name: "camelCase", fn: () => {
   assertEqual(camelCase("foo"), "foo");
   assertEqual(camelCase("foo-bar"), "fooBar");
   assertEqual(camelCase("foo-bar-baz"), "fooBarBaz");
@@ -48,9 +47,9 @@ t("camelCase", () => {
   assertEqual(camelCase("AjaxXMLHttpRequest"), "ajaxXmlHttpRequest");
   assertEqual(camelCase("Ajax-XMLHttpRequest"), "ajaxXmlHttpRequest");
   assertEqual(camelCase([]), "");
-});
+}});
 
-t("camelCase with pascalCase option", () => {
+test({name: "camelCase with pascalCase option", fn: () => {
   assertEqual(camelCase("foo", { pascalCase: true }), "Foo");
   assertEqual(camelCase("foo-bar", { pascalCase: true }), "FooBar");
   assertEqual(camelCase("foo-bar-baz", { pascalCase: true }), "FooBarBaz");
@@ -111,4 +110,6 @@ t("camelCase with pascalCase option", () => {
     "AjaxXmlHttpRequest"
   );
   assertEqual(camelCase([], { pascalCase: true }), "");
-});
+}});
+
+runTests();
